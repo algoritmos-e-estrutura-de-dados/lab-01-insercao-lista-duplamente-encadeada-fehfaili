@@ -13,7 +13,7 @@ class Lista:
         self.init = None
         self.tail = None
 
-    def append(self, node):
+    def append(self, node): 
         """
         Método para inserir um elemento no final
 
@@ -25,8 +25,10 @@ class Lista:
             self.tail = node
             return
 
+    
         self.tail.next = node
         node.prev = self.tail
+        self.tail = node
 
 
     def add(self, node):
@@ -43,6 +45,8 @@ class Lista:
 
         node.next = self.init
         self.init = node
+        node.next.prev = node
+    
 
     def __str__(self):
         str_aux = '['
